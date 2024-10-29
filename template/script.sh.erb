@@ -13,10 +13,7 @@ end
 %>
 
 if ! which code-server; then
-    # mkdir -p /mnt/resource/$USER
-    # pushd /mnt/resource/$USER
     curl -fsSL https://code-server.dev/install.sh | sh -s -- --version 4.93.1 --method standalone --prefix ~/.local
-    popd
 fi
 
 export PATH=~/.local/bin:$PATH
