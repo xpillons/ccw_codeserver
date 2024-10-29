@@ -13,20 +13,20 @@ end
 %>
 
 if ! which code-server; then
-    mkdir -p /mnt/resource/$USER
-    pushd /mnt/resource/$USER
-    curl -fsSL https://code-server.dev/install.sh | sh -s -- --version 4.8.3 --method standalone --prefix /mnt/resource/$USER
+    # mkdir -p /mnt/resource/$USER
+    # pushd /mnt/resource/$USER
+    curl -fsSL https://code-server.dev/install.sh | sh -s -- --version 4.93.1 --method standalone --prefix ~/.local
     popd
 fi
 
-export PATH=/mnt/resource/$USER/bin:$PATH
+export PATH=~/.local/bin:$PATH
 CODE_SERVER_DATAROOT="$HOME/.local/share/code-server"
 
 # Expose the password to the server.
 export PASSWORD="$password"
 
 # Print compute node.
-echo "$(date): Running on compute node ${compute_node}:$port"
+echo "$(date): Running on ${host}:$port"
 
 #
 # Start Code Server.
