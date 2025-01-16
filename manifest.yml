@@ -1,7 +1,7 @@
 ---
-name: Code Server
+name: Code Server on Compute Node
 category: Interactive Apps
-subcategory: Servers
+subcategory: Compute Nodes
 role: batch_connect
 description: |
   This app will launch a [VS Code] server using [Code Server].
